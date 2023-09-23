@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    
+    <style>
+        input,textarea, select {
+            margin: auto;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tambahkan Product</h1>
+    <form action="/product" method="post">
+        <br>
+        <label for="name">Nama Produk</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand">
+        <br>
+        <label for="color">Warna</label>
+        <input type="text" name="color" id="color">
+        <br>
+        <label for="price">Harga</label>
+        <input type="number" name="price" id="price">
+        <br>
+        <label for="category">Kategori</label>
+        <select name="category" id="category">
+            <option value="Aksesoris">Aksesoris</option>
+            <option value="Baju">Baju</option>
+            <option value="Celana">Celana</option>
+            <option value="Jaket">Jaket</option>
+        </select>
+        <br>
+        <label for="description">Deskripsi</label>
+        <br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <br>
+        <label for="condition">Kondisi</label>
+        <select name="condition" id="condition">
+            <option value="baru">Baru</option>
+            <option value="bekas">Bekas</option>
+        </select>
+        <br>
+        <label for="stock">Stock</label>
+        <input type="number" name="stock" id="stock">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFShop</title>
+</head>
+<body>
+    <ul>
+        <a href="product/create">+Product</a>
+        <br><br>
+        <% for(product of products) { %>
+            <br>
+            <a href="product/<%= product._id %>">
+                <li><%= product.name %> | harga: <%= product.price %></li> 
+            </a>
+        <% } %>
+    </ul>
+</body>
+</html>

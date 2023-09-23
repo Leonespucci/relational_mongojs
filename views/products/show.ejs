@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+</head>
+<body>
+    <h1><%= product.name %> - <%= product.brand %></h1>
+    <h4>Rp.<%= product.price %></h4>
+    <table border="1">
+        <tr>
+            <th>Warna</th>
+            <th>Kategori</th>
+            <th>Kondisi</th>
+            <th>Stock</th>
+        </tr>
+        <tr>
+            <td><%= product.color %></td>
+            <td> <%= product.category %></td>
+            <td> <%= product.condition %></td>
+            <td><%= product.stock %></td>
+        </tr>
+
+    </table>
+    <p><%= product.description %></p>
+<br>
+    <a href="/product/<%= product._id %>/edit">Edit</a>
+</body>
+</html>

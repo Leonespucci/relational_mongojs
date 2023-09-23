@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <style>
+        input,textarea, select {
+            margin: auto;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form action="/product/<%= product._id %>?_method=PUT" method="post">
+        <br>
+        <label for="name">Nama Produk</label>
+        <input type="text" name="name" id="name" value="<%= product.name %>">
+        <br>
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand" value="<%= product.brand %>">
+        <br>
+        <label for="color">Warna</label>
+        <input type="text" name="color" id="color" value="<%= product.color %>">
+        <br>
+        <label for="price">Harga</label>
+        <input type="number" name="price" id="price" value="<%= product.price %>">
+        <br>
+        <label for="category">Kategori</label>
+        <select name="category" id="category">
+            <option value="Aksesoris" <%= product.category == 'Aksesoris' ? 'selected' : '' %>>Aksesoris</option>
+            <option value="Baju" <%= product.category == 'Baju' ? 'selected' : '' %>>Baju</option>
+            <option value="Celana" <%= product.category == 'Celana' ? 'selected' : '' %>>Celana</option>
+            <option value="Jaket" <%= product.category == 'Jaket' ? 'selected' : '' %>>Jaket</option>
+        </select>
+        <br>
+        <label for="description">Deskripsi</label>
+        <br>
+        <textarea name="description" id="description" cols="30" rows="10"><%= product.description %></textarea>
+        <br>
+        <label for="condition">Kondisi</label>
+        <select name="condition" id="condition">
+            <option value="baru" <%= product.condition == 'baru' ? 'selected' : '' %>>Baru</option>
+            <option value="bekas" <%= product.condition == 'bekas' ? 'selected' : '' %>>Bekas</option>
+        </select>
+        <br>
+        <label for="stock" >Stock</label>
+        <input type="number" name="stock" id="stock" value="<%= product.stock %>">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
