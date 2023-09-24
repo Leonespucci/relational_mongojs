@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Product</title>
-    
     <style>
         input,textarea, select {
             margin: auto;
@@ -14,7 +13,7 @@
 </head>
 <body>
     <h1>Tambahkan Product</h1>
-    <form action="/product" method="post">
+    <form action="/garments/<%= garment_id %>/product" method="post">
         <br>
         <label for="name">Nama Produk</label>
         <input type="text" name="name" id="name">

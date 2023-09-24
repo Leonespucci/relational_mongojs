@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garment Show</title>
+</head>
+<body>
+<h1><%= garment.name %></h1>
+<h2>Lokasi : <%= garment.location %></h2>
+<h2>Kontak : <%= garment.contact %></h2>
+<br>
+<h3>list produk dari <%= garment.name %> :</h3>
+    <% for( product of garment.products ) { %>
+        <p>~<%= product.name %> <button><a href="/product/<%= product._id %>">Detail</a></button>    
+            <form action="/product/<%= product._id %>?_method=DELETE" method="post">
+                <button type="submit">HAPUS</button>
+            </form>
+            <hr/></p>
+    <% } %>
+    <a href="/garments">Back</a>
+    <form action="/garments/<%= garment._id %>?_method=DELETE" method="post">
+        <button type="submit">HAPUS GARMEN!</button>
+    </form>
+<a href="/garments/<%= garment._id %>/product/create">+Create Product</a>
+</body>
+</html>

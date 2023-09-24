@@ -14,17 +14,25 @@
             <th>Kategori</th>
             <th>Kondisi</th>
             <th>Stock</th>
+            <th>germent</th>
         </tr>
         <tr>
             <td><%= product.color %></td>
             <td> <%= product.category %></td>
             <td> <%= product.condition %></td>
             <td><%= product.stock %></td>
+            <% for(garment of product.garments) { %>
+            <td><a href="/garments/<%= garment._id %>"><%= garment.name %></a></td>
+            <% } %>
+        
         </tr>
 
     </table>
     <p><%= product.description %></p>
 <br>
     <a href="/product/<%= product._id %>/edit">Edit</a>
+    <form action="/product/<%= product._id %>?_method=DELETE" method="post">
+    <button type="submit">HAPUS</button>
+</form>
 </body>
 </html>

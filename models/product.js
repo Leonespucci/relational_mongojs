@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const productScema = new mongoose.Schema({
     name: {
         type: String,
@@ -39,10 +40,12 @@ const productScema = new mongoose.Schema({
         min: [0, 'min stock 0 no minus'],
         required: true
     },
-    garmens: {
-        type: mongoose.SchemaTypes.ObjectId,
-        ref:'Garmen'
-    }
+    garments: [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Garment'
+        }
+]
 });
 
 
